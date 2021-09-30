@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
+
 import { TasksModule } from './tasks/tasks.module';
 
 @Module({
@@ -12,13 +13,12 @@ import { TasksModule } from './tasks/tasks.module';
     }),
     TypeOrmModule.forRoot({
       type: 'mongodb',
-      host: "localhost",
+      host: 'localhost',
       port: 27017,
-      database: "test",
+      database: 'test',
       autoLoadEntities: true,
       synchronize: true,
     }),
   ],
 })
-
 export class AppModule {}

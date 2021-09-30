@@ -1,11 +1,10 @@
 import { Field, ID, ObjectType } from '@nestjs/graphql';
-import { Entity, Column, ObjectIdColumn} from 'typeorm';
-
+import { Entity, Column, ObjectIdColumn } from 'typeorm';
 
 @ObjectType({ description: 'task' })
 @Entity()
 export class Task {
-  @Field(type => ID)
+  @Field((type) => ID)
   @ObjectIdColumn()
   id: string;
 

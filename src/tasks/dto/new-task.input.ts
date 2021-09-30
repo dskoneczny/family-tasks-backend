@@ -1,5 +1,5 @@
-import { Field, InputType, PartialType } from '@nestjs/graphql';
-import { IsBoolean, IsOptional, Length, MaxLength, MinLength } from 'class-validator';
+import { Field, InputType } from '@nestjs/graphql';
+import { IsBoolean, IsOptional, Length } from 'class-validator';
 
 @InputType()
 export class NewTaskInput {
@@ -12,11 +12,7 @@ export class NewTaskInput {
   @Length(0, 255)
   description?: string;
 
-  @Field({nullable: false, defaultValue: false})
+  @Field({ nullable: false, defaultValue: false })
   @IsBoolean()
   done: boolean;
 }
-
-@InputType()
-export class UpdateTaskInput extends PartialType(NewTaskInput) {}
-
