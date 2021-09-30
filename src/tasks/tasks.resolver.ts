@@ -25,4 +25,11 @@ export class TasksResolver {
       done: true,
     });
   }
+
+  @Mutation((returns) => Task)
+  async markTaskAsUnDone(@Args('id') id: string) {
+    return this.tasksService.update(id, {
+      done: false,
+    });
+  }
 }

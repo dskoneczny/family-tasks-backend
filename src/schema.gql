@@ -23,6 +23,7 @@ type Query {
 type Mutation {
   addTask(newTaskData: NewTaskInput!): Task!
   markTaskAsDone(id: String!): Task!
+  markTaskAsUnDone(id: String!): Task!
 }
 
 input NewTaskInput {
