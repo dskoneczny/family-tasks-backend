@@ -21,14 +21,14 @@ import { UsersModule } from './users/users.module';
         return graphQLFormattedError;
       },
     }),
-    // refactor to use environment variables
     TypeOrmModule.forRoot({
-      type: 'mongodb',
-      host: 'localhost',
-      port: 27017,
-      database: 'family-tasks',
+      type: "mongodb",
+      url: process.env.DATABASE_URL,
+      useNewUrlParser: true,
       autoLoadEntities: true,
       synchronize: true,
+      logging: true,
+      useUnifiedTopology: true,
     }),
   ],
 })
