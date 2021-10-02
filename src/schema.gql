@@ -2,6 +2,11 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+"""Auth DTO"""
+type AuthDto {
+  token: String!
+}
+
 """task"""
 type Task {
   id: ID!
@@ -24,10 +29,22 @@ type Mutation {
   addTask(newTaskData: NewTaskInput!): Task!
   markTaskAsDone(id: String!): Task!
   markTaskAsUnDone(id: String!): Task!
+  register(registerData: RegisterUserInput!): AuthDto!
+  login(loginData: LoginUserInput!): AuthDto!
 }
 
 input NewTaskInput {
   title: String!
   description: String
   done: Boolean = false
+}
+
+input RegisterUserInput {
+  email: String!
+  password: String!
+}
+
+input LoginUserInput {
+  email: String!
+  password: String!
 }

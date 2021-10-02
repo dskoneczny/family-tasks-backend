@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { MongoRepository } from 'typeorm';
-
 import { NewTaskInput } from './dto/new-task.input';
 import { UpdateTaskInput } from './dto/update-task.input';
 import { Task } from './models/task.model';

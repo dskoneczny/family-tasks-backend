@@ -1,9 +1,8 @@
-import { NotFoundException } from '@nestjs/common';
-import { Args, Mutation, Query, Resolver, Subscription } from '@nestjs/graphql';
-
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { NewTaskInput } from './dto/new-task.input';
 import { Task } from './models/task.model';
 import { TasksService } from './tasks.service';
+
 
 @Resolver((of) => Task)
 export class TasksResolver {
