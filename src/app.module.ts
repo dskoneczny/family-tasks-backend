@@ -13,6 +13,7 @@ import { UsersModule } from './users/users.module';
     AuthModule,
     UsersModule,
     GraphQLModule.forRoot({
+      playground: true,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       formatError: (error: GraphQLError) => {
         const graphQLFormattedError: GraphQLFormattedError = {
