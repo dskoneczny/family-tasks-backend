@@ -14,6 +14,7 @@ import { UsersModule } from './users/users.module';
     UsersModule,
     GraphQLModule.forRoot({
       cors: true,
+      introspection: true,
       playground: true,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       formatError: (error: GraphQLError) => {
